@@ -279,8 +279,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-311ce611.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-92ff4029.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e9bde216.js"></script>
 
     <script>
@@ -288,7 +288,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;python&quot;,&quot;r&quot;,&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -296,12 +296,12 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-a7e4f4e7.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="javascript">JavaScript</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="r">R</a>
+              <a href="#" data-language-name="shell">cURL</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -310,6 +310,17 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#a-simple-api-interface" class="toc-h2 toc-link" data-title="A simple API interface">A simple API interface</a>
+                  </li>
+                  <li>
+                    <a href="#state-of-the-art-ai-services" class="toc-h2 toc-link" data-title="State-of-the-art AI services">State-of-the-art AI services</a>
+                  </li>
+                  <li>
+                    <a href="#leading-providers" class="toc-h2 toc-link" data-title="Leading providers">Leading providers</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -333,27 +344,45 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.rapyd.ai/app/sign-up/'>Sign Up for RAPYD.AI</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<blockquote>
+<p><strong> GETTING STARTED? </strong><br />
+Check out our <a href="https://www.rapyd.ai/help-center/quickstart-guide"> quickstart guide</a>.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p><strong> NOT A DEVELOPER? </strong> <br /> 
+Sign in to your <a href="https://www.rapyd.ai/app/start">RAPYD.AI dashboard</a> to get started with apps. </p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Base URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight markdown tab-markdown"><code>https://api.rapyd.ai
+</code></pre></div>
+<p>RAPYD.AI is an API for AI services. Some people call it AI-as-a-Service. Some call it AI platform. We don&#39;t mind how you call it, but here&#39;s what RAPYD.AI does in plain English:</p>
+
+<aside class="notice">
+<strong>RAPYD.AI gives you a simple API interface to access state-of-the-art AI services from leading providers.</strong>
+</aside>
+
+<p>Let&#39;s break this statement down:</p>
+<h2 id='a-simple-api-interface'>A simple API interface</h2>
+<p>The RAPYD.AI API is organized around REST. Our API accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs. You can send texts, images, videos or audio files as inputs. You can even use our API to train and deploy custom models (Pro Plan).</p>
+<h2 id='state-of-the-art-ai-services'>State-of-the-art AI services</h2>
+<p>We ensure that the AI services that we provide belong the best of their class. You should focus on your use-case and your AI application and not whether another AI service might do a better job. It might be that another AI achieves better results, especially in very specific or niche settings. But generally speaking, the AI services that we provide here will give you a good baseline to start with.</p>
+<h2 id='leading-providers'>Leading providers</h2>
+<p>All AI services on RAPYD.AI are production ready. We don&#39;t want you to build your prototype using some AI service that does not scale. When you decide to go into production, you can rely that the service provider in the backend can handle your AI production workloads.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="w"> </span><span class="s1">'kittn'</span><span class="w">
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kittn</span><span class="o">::</span><span class="n">APIClient.authorize</span><span class="o">!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
@@ -376,11 +405,11 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="w"> </span><span class="s1">'kittn'</span><span class="w">
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kittn</span><span class="o">::</span><span class="n">APIClient.authorize</span><span class="o">!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span><span class="w">
+</span><span class="n">api.kittens.get</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
@@ -437,11 +466,11 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="w"> </span><span class="s1">'kittn'</span><span class="w">
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kittn</span><span class="o">::</span><span class="n">APIClient.authorize</span><span class="o">!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span><span class="w">
+</span><span class="n">api.kittens.get</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -480,11 +509,11 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="w"> </span><span class="s1">'kittn'</span><span class="w">
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kittn</span><span class="o">::</span><span class="n">APIClient.authorize</span><span class="o">!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span><span class="w">
+</span><span class="n">api.kittens.delete</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -581,10 +610,10 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="javascript">JavaScript</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="r">R</a>
+                <a href="#" data-language-name="shell">cURL</a>
           </div>
       </div>
     </div>
